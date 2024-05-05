@@ -3,7 +3,6 @@ package com.example.demo.model;
 public class Endereco {
 
     //#region Atributos
-    private Long id;
     private String rua;
     private Long numero;
     private String bairro;
@@ -12,13 +11,6 @@ public class Endereco {
     //#endregion
 
     //#region Getters e Setters
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getRua() {
         return rua;
     }

@@ -3,21 +3,20 @@ package com.example.demo.model;
 public class Pessoa {
 
     //#region Atributos
-    private Long id;
     private String nome;
-    private Long cpf;
-    private Long telefone;
+    private String cpf;
+    private String telefone;
     private char sexo;
-    private String endereco;
+
+    public Pessoa(String nome, String cpf, String telefone, char sexo) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.telefone = telefone;
+        this.sexo = sexo;
+    }
     //#endregion
 
     //#region Getters e Setters
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getNome() {
         return nome;
@@ -26,17 +25,17 @@ public class Pessoa {
         this.nome = nome;
     }
 
-    public Long getCpf() {
+    public String getCpf() {
         return cpf;
     }
-    public void setCpf(Long cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
-    public Long getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
-    public void setTelefone(Long telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 
@@ -44,14 +43,11 @@ public class Pessoa {
         return sexo;
     }
     public void setSexo(Character sexo) {
+        if (sexo != 'M' && sexo != 'F') {
+            throw new IllegalArgumentException("O sexo deve ser 'M' para masculino ou 'F' para feminino.");
+        }
         this.sexo = sexo;
     }
 
-    public String getEndereco() {
-        return endereco;
-    }
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
     //endregion
 }
